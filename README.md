@@ -2,6 +2,10 @@
 
 # 💌 ** KooL's ❄️ NixOS-Hyprland Install Script ** 💌
 
+# NOTICE!!  This repository has been ARCHIVED!! 
+## It has been moved to [LinuxBeginnings](https://github.com/LinuxBeginnings/NixOS-Hyprland.git) 
+
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/JaKooLit/Hyprland-Dots/main/assets/latte.png" width="400" />
 </p>
