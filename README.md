@@ -1,3 +1,7 @@
+## IMPORTANT! Beginning of March 2026, This project will be archived and it will be maintained by Dwilliams
+- https://github.com/LinuxBeginnings
+- https://github.com/LinuxBeginnings/NixOS-Hyprland
+
 <div align="center">
 
 # 💌 ** KooL's ❄️ NixOS-Hyprland Install Script ** 💌
