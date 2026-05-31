@@ -14,7 +14,12 @@ in {
   environment.systemPackages =
     (with pkgs; [
       # System Packages
-      fastfetch
+	fastfetch
+	librewolf
+	obsidian
+	lobster
+	ani-cli
+	lazygit
     ])
     ++ [
       python-packages

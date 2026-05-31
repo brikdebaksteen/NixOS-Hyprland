@@ -51,8 +51,10 @@
     alejandra
     onefetch
     atop
-    go #needed for waybar-weather compile 
-
+    go #needed for waybar-weather compile
+    vagrant
+    virtualbox
+    
     # Update flkake script
     (pkgs.writeShellScriptBin "update" ''
       cd ~/NixOS-Hyprland
@@ -221,17 +223,16 @@
     cpu-x
     cyme #list USB devices - very handy
     gdu # Dusk usage
-    glances # system monitor tool
     gping # Graphical ping tool
     htop # system monitor tool
     hyfetch
     ipfetch
     pfetch
     smartmontools
-    light
+    brightnessctl
     lm_sensors
     mission-center
-    neofetch
+    fastfetch
 
     # Development related
     luarocks
@@ -255,4 +256,5 @@
     JAKOS_NIXOS_VERSION = "0.0.5";
     JAKOS = "true";
   };
+
 }

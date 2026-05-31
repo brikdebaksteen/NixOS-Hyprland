@@ -5,35 +5,51 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
+  # Cruciaal voor het automatisch laden van de sdb1 schijf
+  boot.supportedFilesystems = [ "exfat" ];
+
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/283f7b16-d9d3-4da2-ad93-e3d608009c1e";
+    {
+      device = "/dev/disk/by-uuid/283f7b16-d9d3-4da2-ad93-e3d608009c1e";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/CD61-081B";
+    {
+      device = "/dev/disk/by-uuid/CD61-081B";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   fileSystems."/mnt/nvme0n1p2" =
-    { device = "/dev/disk/by-uuid/4fc6c446-fa7d-4248-acc8-5e014151363c";
+    {
+      device = "/dev/disk/by-uuid/4fc6c446-fa7d-4248-acc8-5e014151363c";
       fsType = "ext4";
     };
 
   fileSystems."/mnt/sda1" =
-    { device = "/dev/disk/by-uuid/2dc376c7-e6da-458a-b427-90527ef997d9";
+    {
+      device = "/dev/disk/by-uuid/2dc376c7-e6da-458a-b427-90527ef997d9";
       fsType = "ext4";
+      options = [ "nofail" ];
     };
 
+  fileSystems."/mnt/sdb1" =
+    {
+      device = "/dev/disk/by-uuid/6fc3163b-815c-40e6-b22b-14760a2008a2";
+      fsType = "ext4";
+      # We maken de permissies soepeler (0000) zodat de installer overal bij kan
+      options = [ "nofail" ];
+    };
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

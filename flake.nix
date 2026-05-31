@@ -17,7 +17,7 @@
       ref = "v1";
     };
 
-    catppuccin = {
+  catppuccin = {
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -37,8 +37,8 @@
     }:
     let
       system = "x86_64-linux";
-      host = "jak-hl";
-      username = "dwilliams";
+      host = "DeusExMachina";
+      username = "brik";
 
       pkgs = import nixpkgs {
         inherit system;

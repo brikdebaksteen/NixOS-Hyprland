@@ -18,9 +18,11 @@ in {
 
     # OpenGL
     hardware.graphics = {
+      enable = true;
       extraPackages = with pkgs; [
         libva
         libva-utils
+        rocmPackages.clr.icd
       ];
     };
   };
